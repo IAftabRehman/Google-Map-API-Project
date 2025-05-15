@@ -47,12 +47,12 @@ To get started with this project, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/IAftabRehman/google_map_api_project.git
+    git clone https://github.com/IAftabRehman/Google-Map-API-Project.git
     ```
 
 2. Navigate to the project directory:
     ```bash
-    cd google_map_api_project
+    cd Google-Map-API-Project
     ```
 
 3. Install dependencies:
