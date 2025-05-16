@@ -1,0 +1,46 @@
+// For Initial Location
+static const CameraPosition initialCameraPosition = CameraPosition(
+    target: LatLng(33.72993324248651, 73.03831168800549),
+    zoom: 17,
+  );
+
+<- In Widget code is: GoogleMap(initialCameraPosition: initialCameraPosition)
+
+
+
+--------------------------------------------------------------------------------------
+// For Markers Code
+List<Marker> _marker = [];
+  List<Marker> _list = const [
+    Marker(markerId: MarkerId('1'),
+    position: LatLng(33.72993324248651, 73.03831168800549),
+    infoWindow: InfoWindow(
+      title: "Faisal Masque"
+    ))
+
+<- In Widget code is: GoogleMap( marker : Set<Marker>.of(_marker)
+
+
+
+--------------------------------------------------------------------------------------
+// Change value to name or name to value on the address
+Future<void> getAddressFromCoordinates(double lat, double lon) async {
+      List<Placemark> placemarks = await placemarkFromCoordinates(lat, lon);
+      Placemark place = placemarks[0];
+      setState(() {
+        addressResult =
+        '${place.street}, ${place.locality}, ${place.postalCode}, ${place.country}';
+      });
+      print(addressResult.toString());
+  }
+
+ < - In Widget code is:
+ ElevatedButton(
+         onPressed: (){
+         getAddressFromCoordinates(33.7294, 73.0379);
+         },
+         child: Center(child: Text("Click"))
+ )
+
+
+ --------------------------------------------------------------------------------------
